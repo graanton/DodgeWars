@@ -21,8 +21,4 @@ public class Bot : PlayerHealth
             SceneManager.LoadScene(0);
         }
     }
-    public override void UpdateHpBar()
-    {
-        
-    }
 }
