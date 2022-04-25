@@ -31,15 +31,16 @@ public class BotMove : PlayerMoveBase
 
     public override void Move()
     {
-        Vector3 direction = (_target.transform.position - transform.position).normalized * _speed;
-        _playerBody.velocity = direction;
+        Vector3 direction = (_target.transform.position - transform.position);
+        direction.y = 0;
+        _playerBody.velocity = direction.normalized * _speed;
         _body.rotation = Quaternion.LookRotation(direction);
     }
 
     public override IEnumerator Dash()
     {
         float dashStartTime = Time.time;
-        Vector3 dashDirectional = _playerBody.velocity;
+        Vector3 dashDirectional = _playerBody.velocity.normalized;
         _dashing = true;
         while (Time.time < dashStartTime + _dashTime)
         {

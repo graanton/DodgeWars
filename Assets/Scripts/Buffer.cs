@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class Buffer : MonoBehaviour
 {
-    [SerializeField] private float _kBuff = 0.1f;
+    [SerializeField] private float _kBuffHealth = 0.1f;
+    [SerializeField] private float _kBuffDamage = 0.1f;
     [SerializeField] private float _kScale = 0.1f;
     [SerializeField] private float _rotateSpeed = 3;
     private void Update()
@@ -16,12 +17,12 @@ public class Buffer : MonoBehaviour
         if (other.TryGetComponent(out PlayerAttack playerAttackComponet))
         {
             
-            playerAttackComponet.AddDamage(Convert.ToInt32(playerAttackComponet.GetBaseDamage() * _kBuff));
+            playerAttackComponet.AddDamage(Convert.ToInt32(playerAttackComponet.GetBaseDamage() * _kBuffDamage));
         }
         if (other.TryGetComponent(out PlayerHealth player))
         {
             player.transform.localScale += Vector3.one * _kScale;
-            player.AddMaxHealth(Convert.ToInt32(player.baseMaxHealth * _kBuff));
+            player.AddMaxHealth(Convert.ToInt32(player.baseMaxHealth * _kBuffHealth));
             Destroy(gameObject);
         }
 
