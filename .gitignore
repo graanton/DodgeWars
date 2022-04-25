@@ -58,3 +58,10 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+Packages/manifest.json
+Packages/manifest.json
+Packages/packages-lock.json
+ProjectSettings/Packages/com.unity.probuilder/Settings.json
+ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json
+ProjectSettings/ProjectSettings.asset
+ProjectSettings/ProjectVersion.txt
