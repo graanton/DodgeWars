@@ -46,9 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 706ce3003a3b7a043b0e5758485b82c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _kBuff: 0.1
+  _kBuffHealth: 0.1
+  _kBuffDamage: 0.1
   _kScale: 0.1
-  _rotateSpeed: 10
+  _rotateSpeed: 130
 --- !u!65 &6756030178521773581
 BoxCollider:
   m_ObjectHideFlags: 0
