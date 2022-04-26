@@ -14,7 +14,7 @@ public class Buffer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out PlayerAttack playerAttackComponet))
+        if (other.TryGetComponent(out PlayerAttackBase playerAttackComponet))
         {
             
             playerAttackComponet.AddDamage(Convert.ToInt32(playerAttackComponet.GetBaseDamage() * _kBuffDamage));

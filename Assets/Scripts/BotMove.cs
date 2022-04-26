@@ -6,6 +6,9 @@ public class BotMove : PlayerMoveBase
 {
     [SerializeField] private float _dashTime = 1f;
     [SerializeField] private float _dashSpeed = 12f;
+    [SerializeField] private float _minTimeToDash = 3;
+    [SerializeField] private float _maxTimeToDash = 8;
+    [SerializeField][Range(1, 10000)] private int _randomDepth = 1000;
     private PlayerMove _target;
     private bool _dashing;
 
@@ -48,7 +51,7 @@ public class BotMove : PlayerMoveBase
             yield return null;
         }
         _dashing = false;
-        yield return new WaitForSeconds(Random.Range(3000, 8000) / 1000);
+        yield return new WaitForSeconds(Random.Range(_minTimeToDash * _randomDepth, _maxTimeToDash * _randomDepth) / _randomDepth);
         StartDashing();
     }
 }

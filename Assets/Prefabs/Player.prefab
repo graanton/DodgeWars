@@ -126,8 +126,8 @@ GameObject:
   - component: {fileID: 3528146159682167366}
   - component: {fileID: 3528146159682167388}
   - component: {fileID: 3528146159682167362}
-  - component: {fileID: 3528146159682167389}
   - component: {fileID: 5130398783812463136}
+  - component: {fileID: -2621946721734527226}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -199,24 +199,6 @@ MonoBehaviour:
   _hpBar: {fileID: 5541387581338784554}
   _regenerationRate: 1
   _regenerationPower: 0.1
---- !u!114 &3528146159682167389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3528146159682167365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1abc0829532014541ba46517240b7dc2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _unAttack: {fileID: 3528146159279578765}
-  _bullet: {fileID: 7867368049732382922, guid: 3b8db706dd36b6a4780e9f332ecd392e, type: 3}
-  _attackController: {fileID: 0}
-  _fireRate: 0.33
-  _damage: 300
-  _range: 3
 --- !u!114 &5130398783812463136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,6 +216,24 @@ MonoBehaviour:
   _moveController: {fileID: 0}
   _dashSpeed: 8
   _dashTime: 1.5
+--- !u!114 &-2621946721734527226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3528146159682167365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62f769236082c69459dc6d94c6ba99bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fireRate: 1
+  _damage: 0
+  _range: 0
+  _unAttack: {fileID: 3528146159279578765}
+  _bullet: {fileID: 0}
+  _attackController: {fileID: 0}
 --- !u!1 &3528146159965525767
 GameObject:
   m_ObjectHideFlags: 0

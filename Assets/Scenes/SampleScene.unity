@@ -6024,6 +6024,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2621946721734527226, guid: c25c5103c56824240aa178b8b9ab84ca, type: 3}
+      propertyPath: _range
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2621946721734527226, guid: c25c5103c56824240aa178b8b9ab84ca, type: 3}
+      propertyPath: _bullet
+      value: 
+      objectReference: {fileID: 7867368049732382922, guid: 3b8db706dd36b6a4780e9f332ecd392e, type: 3}
+    - target: {fileID: -2621946721734527226, guid: c25c5103c56824240aa178b8b9ab84ca, type: 3}
+      propertyPath: _damage
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: -2621946721734527226, guid: c25c5103c56824240aa178b8b9ab84ca, type: 3}
+      propertyPath: _fireRate
+      value: 0.333
+      objectReference: {fileID: 0}
+    - target: {fileID: -2621946721734527226, guid: c25c5103c56824240aa178b8b9ab84ca, type: 3}
+      propertyPath: _attackController
+      value: 
+      objectReference: {fileID: 1414043066}
     - target: {fileID: 3528146159682167361, guid: c25c5103c56824240aa178b8b9ab84ca, type: 3}
       propertyPath: m_RootOrder
       value: 30
@@ -6072,10 +6092,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 3528146159682167389, guid: c25c5103c56824240aa178b8b9ab84ca, type: 3}
-      propertyPath: _attackController
-      value: 
-      objectReference: {fileID: 1414043066}
     - target: {fileID: 5130398783812463136, guid: c25c5103c56824240aa178b8b9ab84ca, type: 3}
       propertyPath: _moveController
       value: 
