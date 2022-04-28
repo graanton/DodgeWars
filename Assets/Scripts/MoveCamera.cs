@@ -19,7 +19,7 @@ public class MoveCamera : MonoBehaviour
     private void Follow()
     {
         Vector3 startPosition = transform.position;
-        Vector3 followPosition = new Vector3(_target.position.x, transform.position.y, _target.position.z) + offset;
+        Vector3 followPosition = _target.position + offset;
         Vector3 directional = Vector3.Lerp(startPosition, followPosition, Time.deltaTime * speed);
 
         transform.position = directional;
