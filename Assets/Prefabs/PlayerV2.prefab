@@ -143,6 +143,7 @@ GameObject:
   - component: {fileID: 8271475505750732082}
   - component: {fileID: 2037823888704109385}
   - component: {fileID: 9189903957774594524}
+  - component: {fileID: 3370158488088736076}
   m_Layer: 0
   m_Name: PlayerV2
   m_TagString: Untagged
@@ -236,6 +237,20 @@ MonoBehaviour:
   _moveController: {fileID: 0}
   _dashSpeed: 10
   _dashTime: 2
+--- !u!136 &3370158488088736076
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3736443941942193466}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.62
+  m_Height: 2.43
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5613685222868546154
 GameObject:
   m_ObjectHideFlags: 0

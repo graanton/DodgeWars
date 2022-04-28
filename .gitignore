@@ -66,3 +66,4 @@ ProjectSettings/ProjectSettings.asset
 ProjectSettings/ProjectVersion.txt
 Packages/packages-lock.json
 
+Assets/Prefabs/Bot.prefab
