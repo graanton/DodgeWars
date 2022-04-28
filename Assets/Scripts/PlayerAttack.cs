@@ -9,6 +9,9 @@ public class PlayerAttack : PlayerAttackBase
     [SerializeField] private GameObject _unAttack;
     [SerializeField] private BulletBase _bullet;
     [SerializeField] private DynamicJoystick _attackController;
+    [SerializeField] [Range(0, 1)] float _joystickToAutoAttack;
+
+    private bool _findNearEnemy;
 
     private void Update()
     {
@@ -25,6 +28,10 @@ public class PlayerAttack : PlayerAttackBase
                 _unAttack.SetActive(true);
                 _intedToAttack = true;
             }
+            if (Vector2.Distance(Vector2.zero, attackDirection) < _joystickToAutoAttack)
+            {
+                _findNearEnemy = true;
+            }
             Vector3 vievingVector = new Vector3(_attackController.Horizontal, 0, _attackController.Vertical);
             _unAttack.transform.rotation = Quaternion.LookRotation(vievingVector);
         }
@@ -35,7 +42,22 @@ public class PlayerAttack : PlayerAttackBase
                 _intedToAttack = false;
                 if (_canShooting)
                 {
-                    Shoot();
+                    if (_findNearEnemy)
+                    {
+                        Bot[] allBots = FindObjectsOfType<Bot>();
+                        Vector3 nearBot = allBots[0].transform.position;
+                        foreach (Bot bot in allBots)
+                        {
+                            if (Vector3.Distance(bot.transform.position, nearBot) < Vector3.Distance(Vector3.zero, nearBot)
+                            {
+                                nearBot = bot.transform.position;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        Shoot();
+                    }
                 }
             }
             _unAttack.SetActive(false);

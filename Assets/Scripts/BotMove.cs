@@ -44,6 +44,9 @@ public class BotMove : PlayerMoveBase
     {
         float dashStartTime = Time.time;
         Vector3 dashDirectional = _playerBody.velocity.normalized;
+        dashDirectional.z *= -1;
+        dashDirectional.x *= Random.Range(-1 * _randomDepth, 1 * _randomDepth) / _randomDepth;
+        dashDirectional.Normalize();
         _dashing = true;
         while (Time.time < dashStartTime + _dashTime)
         {

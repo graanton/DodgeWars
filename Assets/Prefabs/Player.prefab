@@ -214,8 +214,8 @@ MonoBehaviour:
   _speed: 3
   _body: {fileID: 3528146160479270585}
   _moveController: {fileID: 0}
-  _dashSpeed: 8
-  _dashTime: 1.5
+  _dashSpeed: 10
+  _dashTime: 2
 --- !u!114 &-2621946721734527226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,9 +228,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62f769236082c69459dc6d94c6ba99bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fireRate: 1
   _damage: 0
   _range: 0
+  _fireRate: 1
   _unAttack: {fileID: 3528146159279578765}
   _bullet: {fileID: 0}
   _attackController: {fileID: 0}
