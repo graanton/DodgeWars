@@ -295,10 +295,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b6c394ebbb36984eb9729dbbbb1f4ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 6
+  _speed: 5
   _body: {fileID: 1823640634592095050}
   _dashTime: 0.75
-  _dashSpeed: 14
+  _dashSpeed: 12
   _minTimeToDash: 3
   _maxTimeToDash: 8
   _randomDepth: 1000

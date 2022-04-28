@@ -1312,7 +1312,7 @@ RectTransform:
   m_GameObject: {fileID: 578514092}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 6.6}
-  m_LocalScale: {x: 4, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2248,6 +2248,18 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 112
       objectReference: {fileID: 0}
+    - target: {fileID: 2628921625554930304, guid: 015965b5b1d9b4c4b9ae4c8a43d5a1bc, type: 3}
+      propertyPath: _maxHealth
+      value: 25000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2628921625554930304, guid: 015965b5b1d9b4c4b9ae4c8a43d5a1bc, type: 3}
+      propertyPath: _regenerationRate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2628921625554930304, guid: 015965b5b1d9b4c4b9ae4c8a43d5a1bc, type: 3}
+      propertyPath: _regenerationPower
+      value: 0.13
+      objectReference: {fileID: 0}
     - target: {fileID: 3736443941942193466, guid: 015965b5b1d9b4c4b9ae4c8a43d5a1bc, type: 3}
       propertyPath: m_Name
       value: PlayerV2
@@ -2300,6 +2312,14 @@ PrefabInstance:
       propertyPath: _attackController
       value: 
       objectReference: {fileID: 1414043066}
+    - target: {fileID: 9189903957774594524, guid: 015965b5b1d9b4c4b9ae4c8a43d5a1bc, type: 3}
+      propertyPath: _speed
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189903957774594524, guid: 015965b5b1d9b4c4b9ae4c8a43d5a1bc, type: 3}
+      propertyPath: _dashSpeed
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 9189903957774594524, guid: 015965b5b1d9b4c4b9ae4c8a43d5a1bc, type: 3}
       propertyPath: _moveController
       value: 
@@ -3410,7 +3430,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 1921499310}
   speed: 3
-  offset: {x: 0, y: 0, z: -5.04}
+  offset: {x: 0, y: 6, z: -5.04}
 --- !u!4 &1473954955
 Transform:
   m_ObjectHideFlags: 0
