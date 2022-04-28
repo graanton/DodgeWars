@@ -48,7 +48,7 @@ public class PlayerAttack : PlayerAttackBase
                         Vector3 nearBot = allBots[0].transform.position;
                         foreach (Bot bot in allBots)
                         {
-                            if (Vector3.Distance(bot.transform.position, nearBot) < Vector3.Distance(Vector3.zero, nearBot)
+                            if (Vector3.Distance(bot.transform.position, nearBot) < Vector3.Distance(Vector3.zero, nearBot))
                             {
                                 nearBot = bot.transform.position;
                             }
