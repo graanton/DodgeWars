@@ -234,6 +234,7 @@ MonoBehaviour:
   _unAttack: {fileID: 3528146159279578765}
   _bullet: {fileID: 0}
   _attackController: {fileID: 0}
+  _joystickToAutoAttack: 0
 --- !u!1 &3528146159965525767
 GameObject:
   m_ObjectHideFlags: 0

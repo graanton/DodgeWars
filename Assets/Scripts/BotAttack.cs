@@ -17,7 +17,7 @@ public class BotAttack : PlayerAttackBase
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.TryGetComponent(out PlayerHealth player) && player == _currentPlayer)
+        if (other.TryGetComponent(out PlayerHealth player) && other.TryGetComponent(out PlayerMove playerMovment))
         {
             _currentPlayer = null;
         }
