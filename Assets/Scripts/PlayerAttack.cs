@@ -51,6 +51,8 @@ public class PlayerAttack : PlayerAttackBase
                             if (Vector3.Distance(bot.transform.position, nearBot) < Vector3.Distance(Vector3.zero, nearBot))
                             {
                                 nearBot = bot.transform.position;
+                                _unAttack.transform.rotation = Quaternion.LookRotation((transform.position-nearBot).normalized);
+                                Shoot();
                             }
                         }
                     }
