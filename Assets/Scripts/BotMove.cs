@@ -35,7 +35,7 @@ public class BotMove : PlayerMoveBase
     public override void Move()
     {
         Vector3 direction = (_target.transform.position - transform.position);
-        direction.y = 0;
+        direction.y = _playerBody.velocity.y;
         _playerBody.velocity = direction.normalized * _speed;
         _body.rotation = Quaternion.LookRotation(direction);
     }

@@ -19,7 +19,7 @@ public class Buffer : MonoBehaviour
             
             playerAttackComponet.AddDamage(Convert.ToInt32(playerAttackComponet.GetBaseDamage() * _kBuffDamage));
         }
-        if (other.TryGetComponent(out PlayerHealth player) && TryGetComponent(out PlayerMoveBase playerFoots))
+        if (other.TryGetComponent(out PlayerHealth player) && other.TryGetComponent(out PlayerMoveBase playerFoots))
         {
             playerFoots.GetBody().localScale += Vector3.one * _kScale;
             player.AddMaxHealth(Convert.ToInt32(player.baseMaxHealth * _kBuffHealth));
