@@ -21,12 +21,13 @@ public class PlayerMove : PlayerMoveBase
     {
         float moveX = _moveController.Horizontal;
         float moveY = _moveController.Vertical;
-        Vector3 inputVector = new Vector3(moveX, _playerBody.velocity.y, moveY);
+        Vector3 inputVector = new Vector3(moveX, 0, moveY);
         if (inputVector != Vector3.zero)
         {
             _body.rotation = Quaternion.LookRotation(inputVector);
         }
         Vector3 moveVector = transform.TransformDirection(inputVector) * _speed;
+        moveVector.y = _playerBody.velocity.y;
         _playerBody.velocity = moveVector;
     }
 
