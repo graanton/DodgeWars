@@ -181,10 +181,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08cf7e60e4cf8114a878dbb1b2836b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 3200
+  _maxHealth: 10000
   _hpBar: {fileID: 5613685223701642437}
-  _regenerationRate: 1
-  _regenerationPower: 0.1
+  _regenerationRate: 0.3
+  _regenerationPower: 1
 --- !u!114 &8271475505750732082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,7 +218,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &9189903957774594524
 MonoBehaviour:

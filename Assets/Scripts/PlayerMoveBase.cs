@@ -27,4 +27,9 @@ public class PlayerMoveBase : MonoBehaviour
     {
         return null;
     }
+
+    public Transform GetBody()
+    {
+        return _body;
+    }
 }
