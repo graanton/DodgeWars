@@ -2,13 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenuButtons : MonoBehaviour
 {
     [SerializeField] private GameObject _mainMenuPanel;
+    [SerializeField] private Button _backButton;
     [SerializeField] private Transform _camera;
     [SerializeField] private float _swipeSpeed;
     [SerializeField] private Transform _changePlayerPoint;
+
+    private Vector3 _startPoint;
+    private Vector3 _currentTarget;
+
+    private void Start()
+    {
+        _startPoint = _camera.position;
+        _currentTarget = _startPoint;
+    }
 
     public void LoadMainScene(int mainScene)
     {
@@ -16,27 +27,22 @@ public class MainMenuButtons : MonoBehaviour
     }
     public void StartGoingToChangePlayers()
     {
+        _currentTarget = _changePlayerPoint.position;
         DisableMenuPanel();
-        StartCoroutine(GoingToChangePlayer());
     }
     
     private void DisableMenuPanel()
     {
-        _mainMenuPanel.SetActive(true);
+        _mainMenuPanel.SetActive(false);
     }
 
     private void EnableMenuPanel()
     {
-        _mainMenuPanel.SetActive(false);
+        _mainMenuPanel.SetActive(true);
     }
 
-    private IEnumerator GoingToChangePlayer()
+    private void Update()
     {
-        while (Vector3.Distance(_camera.position, _changePlayerPoint.position) != 0)
-        {
-            _camera.position = Vector3.Lerp(_camera.position, _changePlayerPoint.position, _swipeSpeed * Time.fixedDeltaTime);
-            yield return null;
-        }
-        
+        _camera.position = Vector3.Lerp(_camera.position, _currentTarget, _swipeSpeed * Time.deltaTime);
     }
 }
