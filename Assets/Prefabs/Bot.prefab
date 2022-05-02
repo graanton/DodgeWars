@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9628ccbf4ed161d4a80c6d16c2a271a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 5000
+  _maxHealth: 10000
   _hpBar: {fileID: 5689992075662209036}
   _regenerationRate: 1
   _regenerationPower: 0.1
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be367afe668fea949a7b3162ab567ce6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 2000
+  _damage: 500
   _hitRate: 0.3
 --- !u!1 &5689992074356211363
 GameObject:

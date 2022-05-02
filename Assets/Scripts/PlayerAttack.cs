@@ -6,7 +6,7 @@ public class PlayerAttack : PlayerAttackBase
 {
     [SerializeField] private float _range;
     [SerializeField] private float _fireRate = 1f;
-    [SerializeField] private GameObject _unAttack;
+    [SerializeField] protected GameObject _unAttack;
     [SerializeField] private BulletBase _bullet;
 
     public DynamicJoystick _attackController { set; get; }
@@ -71,18 +71,29 @@ public class PlayerAttack : PlayerAttackBase
             _unAttack.SetActive(false);
         }
     }
-    protected virtual void Shoot()
+
+    private void Reload()
+    {
+        StartCoroutine(Reloading());
+    }
+
+    protected BulletBase CreateBullet()
     {
         BulletBase createdBullet = Instantiate(_bullet, _unAttack.transform.position, _unAttack.transform.rotation);
         createdBullet._owner = _owner;
         createdBullet._damage = _damage;
         createdBullet._range = _range;
-        createdBullet.Push(_unAttack.transform.forward);
-
-        StartCoroutine(Reload());
+        return createdBullet;
     }
 
-    private IEnumerator Reload()
+    protected virtual void Shoot()
+    {
+        BulletBase createdBullet = CreateBullet();
+        createdBullet.Push(_unAttack.transform.forward);
+        Reload();
+    }
+
+    private IEnumerator Reloading()
     {
         _canShooting = false;
         yield return new WaitForSeconds(_fireRate);

@@ -44,9 +44,9 @@ GameObject:
   - component: {fileID: 3528146159682167388}
   - component: {fileID: 3528146159682167362}
   - component: {fileID: 5130398783812463136}
-  - component: {fileID: -2621946721734527226}
+  - component: {fileID: 1498709436341224332}
   m_Layer: 0
-  m_Name: Player
+  m_Name: PlayerV1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08cf7e60e4cf8114a878dbb1b2836b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 3200
+  _maxHealth: 2000000
   _hpBar: {fileID: 5541387581338784554}
   _regenerationRate: 1
   _regenerationPower: 0.1
@@ -132,7 +132,7 @@ MonoBehaviour:
   _body: {fileID: 3528146160479270585}
   _dashSpeed: 10
   _dashTime: 2
---- !u!114 &-2621946721734527226
+--- !u!114 &1498709436341224332
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,14 +141,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 3528146159682167365}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62f769236082c69459dc6d94c6ba99bd, type: 3}
+  m_Script: {fileID: 11500000, guid: cd3093c444f95f049a3a08ee40209094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 200
-  _range: 2
-  _fireRate: 1
+  _damage: 1200
+  _range: 4
+  _fireRate: 0.5
   _unAttack: {fileID: 3528146159279578765}
   _bullet: {fileID: 7867368049732382922, guid: 3b8db706dd36b6a4780e9f332ecd392e, type: 3}
+  _bulletsCount: 8
+  _bulletSpacing: 0.2
 --- !u!1 &3528146160479270584
 GameObject:
   m_ObjectHideFlags: 0

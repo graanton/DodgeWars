@@ -197,13 +197,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62f769236082c69459dc6d94c6ba99bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 500
+  _damage: 2000
   _range: 3
-  _fireRate: 0.5
+  _fireRate: 0.3
   _unAttack: {fileID: 3600443663025008994}
   _bullet: {fileID: 7867368049732382922, guid: 3b8db706dd36b6a4780e9f332ecd392e, type: 3}
-  _attackController: {fileID: 0}
-  _joystickToAutoAttack: 0.2
 --- !u!54 &2037823888704109385
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -234,7 +232,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 3
   _body: {fileID: 3600443664509933910}
-  _moveController: {fileID: 0}
   _dashSpeed: 10
   _dashTime: 2
 --- !u!136 &3370158488088736076

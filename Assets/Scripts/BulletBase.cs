@@ -18,10 +18,10 @@ public class BulletBase : MonoBehaviour
         _myPhysic = GetComponent<Rigidbody>();
     }
 
-    public void Push(Vector3 velocity)
+    public void Push(Vector3 direcion)
     {
         Destroy(gameObject, _range);
-        _myPhysic.velocity = velocity.normalized * _shotSpeed;
+        _myPhysic.velocity = direcion.normalized * _shotSpeed;
     }
 
     private void OnTriggerEnter(Collider other)
