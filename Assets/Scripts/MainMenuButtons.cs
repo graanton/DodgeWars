@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using IJunior.TypedScenes;
 
 public class MainMenuButtons : MonoBehaviour
 {
@@ -10,32 +9,44 @@ public class MainMenuButtons : MonoBehaviour
     [SerializeField] private Button _backButton;
     [SerializeField] private Transform _camera;
     [SerializeField] private float _swipeSpeed;
-    [SerializeField] private Transform _changePlayerPoint;
+    [Header("Player viewer and Player")]
+    [SerializeField] private GameObject[] _playerPrefabs;
+    [SerializeField] private Transform[] _playerChangePoints;
+    [SerializeField] private GameObject _swipePlayerButtonsContainer;
+    [SerializeField] private GameObject _choicePlayerButton;
+
+    private GameObject _currentChoicesPlayer;
+
+    private int _currentPlayer;
 
     private Vector3 _startPoint;
     private Vector3 _currentTarget;
 
     private void Start()
     {
-        DisableBackButton();
-
         _backButton.onClick.AddListener(ResetTarget);
         _backButton.onClick.AddListener(EnableMenuPanel);
         _backButton.onClick.AddListener(DisableBackButton);
+        _backButton.onClick.AddListener(DisableSwipeButtons);
+        _backButton.onClick.AddListener(DisabelChoiceButton);
 
         _startPoint = _camera.position;
         _currentTarget = _startPoint;
+
+        _currentChoicesPlayer = _playerPrefabs[0];
     }
 
-    public void LoadMainScene(int mainScene)
+    public void LoadMainScene()
     {
-        SceneManager.LoadScene(mainScene);
+        SampleScene.Load(_currentChoicesPlayer);
     }
     public void StartGoingToChangePlayers()
     {
-        _currentTarget = _changePlayerPoint.position;
+        _currentTarget = _playerChangePoints[_currentPlayer].position;
+        EnableSwipeButtons();
         DisableMenuPanel();
         EnableBackButton();
+        EnabelChoiceButton();
     }
     
     private void EnableBackButton()
@@ -61,6 +72,48 @@ public class MainMenuButtons : MonoBehaviour
     private void ResetTarget()
     {
         _currentTarget = _startPoint;
+    }
+
+    private void EnableSwipeButtons()
+    {
+        _swipePlayerButtonsContainer.SetActive(true);
+    }
+
+    private void DisableSwipeButtons()
+    {
+        _swipePlayerButtonsContainer.SetActive(false);
+    }
+
+    private void EnabelChoiceButton()
+    {
+        _choicePlayerButton.SetActive(true);
+    }
+
+    private void DisabelChoiceButton()
+    {
+        _choicePlayerButton.SetActive(false);
+    }
+
+    public void SwipeRight()
+    {
+        _currentPlayer++;
+        _currentPlayer %= _playerChangePoints.Length;
+        _currentTarget = _playerChangePoints[_currentPlayer].position;
+    }
+
+    public void SwipeLeft()
+    {
+        _currentPlayer--;
+        if (_currentPlayer < 0)
+        {
+            _currentPlayer = _playerChangePoints.Length - 1;
+        }
+        _currentTarget = _playerChangePoints[_currentPlayer].position;
+    }
+
+    public void ChoiceCurrentPlayer()
+    {
+        _currentChoicesPlayer = _playerPrefabs[_currentPlayer];
     }
 
     private void Update()

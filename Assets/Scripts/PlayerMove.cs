@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class PlayerMove : PlayerMoveBase
 {
-    [SerializeField] private DynamicJoystick _moveController;
     [SerializeField] private float _dashSpeed = 8;
     [SerializeField] private float _dashTime = 3;
+
+    public DynamicJoystick _moveController { set; get; }
+
     private bool _dashing;
 
     private void Update()

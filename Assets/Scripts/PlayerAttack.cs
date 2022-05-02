@@ -8,8 +8,8 @@ public class PlayerAttack : PlayerAttackBase
     [SerializeField] private float _fireRate = 1f;
     [SerializeField] private GameObject _unAttack;
     [SerializeField] private BulletBase _bullet;
-    [SerializeField] private DynamicJoystick _attackController;
-    [SerializeField] [Range(0, 1)] float _joystickToAutoAttack;
+
+    public DynamicJoystick _attackController { set; get; }
 
     private bool _findNearEnemy;
 
@@ -71,7 +71,7 @@ public class PlayerAttack : PlayerAttackBase
             _unAttack.SetActive(false);
         }
     }
-    private void Shoot()
+    protected virtual void Shoot()
     {
         BulletBase createdBullet = Instantiate(_bullet, _unAttack.transform.position, _unAttack.transform.rotation);
         createdBullet._owner = _owner;
