@@ -17,6 +17,12 @@ public class MainMenuButtons : MonoBehaviour
 
     private void Start()
     {
+        DisableBackButton();
+
+        _backButton.onClick.AddListener(ResetTarget);
+        _backButton.onClick.AddListener(EnableMenuPanel);
+        _backButton.onClick.AddListener(DisableBackButton);
+
         _startPoint = _camera.position;
         _currentTarget = _startPoint;
     }
@@ -29,8 +35,19 @@ public class MainMenuButtons : MonoBehaviour
     {
         _currentTarget = _changePlayerPoint.position;
         DisableMenuPanel();
+        EnableBackButton();
     }
     
+    private void EnableBackButton()
+    {
+        _backButton.gameObject.SetActive(true);
+    }
+
+    private void DisableBackButton()
+    {
+        _backButton.gameObject.SetActive(false);
+    }
+
     private void DisableMenuPanel()
     {
         _mainMenuPanel.SetActive(false);
@@ -39,6 +56,11 @@ public class MainMenuButtons : MonoBehaviour
     private void EnableMenuPanel()
     {
         _mainMenuPanel.SetActive(true);
+    }
+
+    private void ResetTarget()
+    {
+        _currentTarget = _startPoint;
     }
 
     private void Update()

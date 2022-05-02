@@ -20,21 +20,26 @@ public class PlayerAttack : PlayerAttackBase
 
     private void Aiming()
     {
-        Vector2 attackDirection = new Vector2(_attackController.Horizontal, _attackController.Vertical);
+        Vector2 attackDirection = _attackController.Direction;
         if (attackDirection != Vector2.zero)
         {
             if (_unAttack.activeSelf == false)
             {   
                 _unAttack.SetActive(true);
                 _intedToAttack = true;
+                _findNearEnemy = false;
             }
-            if (Vector2.Distance(Vector2.zero, attackDirection) < _joystickToAutoAttack)
-            {
-                _findNearEnemy = true;
-            }
+            
             Vector3 vievingVector = new Vector3(_attackController.Horizontal, 0, _attackController.Vertical);
             _unAttack.transform.rotation = Quaternion.LookRotation(vievingVector);
         }
+        
+        else if (_attackController.isPressed)
+        {
+            _intedToAttack = true;
+            _findNearEnemy = true;
+        }
+
         else
         {
             if (_intedToAttack)
@@ -48,13 +53,14 @@ public class PlayerAttack : PlayerAttackBase
                         Vector3 nearBot = allBots[0].transform.position;
                         foreach (Bot bot in allBots)
                         {
-                            if (Vector3.Distance(bot.transform.position, nearBot) < Vector3.Distance(Vector3.zero, nearBot))
+                            if (Vector3.Distance(bot.transform.position, transform.position) < Vector3.Distance(nearBot, transform.position))
                             {
                                 nearBot = bot.transform.position;
-                                _unAttack.transform.rotation = Quaternion.LookRotation((transform.position-nearBot).normalized);
-                                Shoot();
+                                _unAttack.transform.rotation = Quaternion.LookRotation((nearBot - transform.position).normalized);
+                                
                             }
                         }
+                        Shoot();
                     }
                     else
                     {

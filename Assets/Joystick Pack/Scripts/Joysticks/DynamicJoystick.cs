@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class DynamicJoystick : Joystick
 {
     public float MoveThreshold { get { return moveThreshold; } set { moveThreshold = Mathf.Abs(value); } }
-
+    public bool isPressed { private set; get; }
     [SerializeField] private float moveThreshold = 1;
 
     protected override void Start()
@@ -18,6 +18,7 @@ public class DynamicJoystick : Joystick
 
     public override void OnPointerDown(PointerEventData eventData)
     {
+        isPressed = true;
         background.anchoredPosition = ScreenPointToAnchoredPosition(eventData.position);
         background.gameObject.SetActive(true);
         base.OnPointerDown(eventData);
@@ -26,6 +27,7 @@ public class DynamicJoystick : Joystick
     public override void OnPointerUp(PointerEventData eventData)
     {
         base.OnPointerUp(eventData);
+        isPressed = false;
     }
 
     protected override void HandleInput(float magnitude, Vector2 normalised, Vector2 radius, Camera cam)

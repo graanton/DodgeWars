@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _kBuffHealth: 0.1
   _kBuffDamage: 0.5
-  _kScale: 0.1
+  _kScale: 0.02
   _rotateSpeed: 130
 --- !u!65 &6756030178521773581
 BoxCollider:
