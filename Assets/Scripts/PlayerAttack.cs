@@ -72,7 +72,7 @@ public class PlayerAttack : PlayerAttackBase
         }
     }
 
-    private void Reload()
+    protected void Reload()
     {
         StartCoroutine(Reloading());
     }

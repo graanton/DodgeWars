@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08cf7e60e4cf8114a878dbb1b2836b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 2000000
+  _maxHealth: 20000
   _hpBar: {fileID: 5541387581338784554}
   _regenerationRate: 1
   _regenerationPower: 0.1

@@ -671,7 +671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5700db37a38f4ae468aeaef8a14ab419, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerPrefabDefault: {fileID: 3528146159682167365, guid: c25c5103c56824240aa178b8b9ab84ca, type: 3}
+  _playerPrefabDefault: {fileID: 3736443941942193466, guid: 015965b5b1d9b4c4b9ae4c8a43d5a1bc, type: 3}
   _moveControllerToPlayer: {fileID: 8135886327613298707}
   _attackControllerToPlayer: {fileID: 1414043066}
   _dashButton: {fileID: 667415202}
