@@ -249,7 +249,7 @@ MonoBehaviour:
   _unAttack: {fileID: 3600443663025008994}
   _bullet: {fileID: 7867368049732382922, guid: 3b8db706dd36b6a4780e9f332ecd392e, type: 3}
   _bulletCount: 3
-  _shootField: 45
+  _shootField: 40
 --- !u!1 &5613685222868546154
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,16 +24,21 @@ public class MainMenuButtons : MonoBehaviour
 
     private void Start()
     {
-        _backButton.onClick.AddListener(ResetTarget);
-        _backButton.onClick.AddListener(EnableMenuPanel);
-        _backButton.onClick.AddListener(DisableBackButton);
-        _backButton.onClick.AddListener(DisableSwipeButtons);
-        _backButton.onClick.AddListener(DisabelChoiceButton);
+        _backButton.onClick.AddListener(GoToMainMenu);
 
         _startPoint = _camera.position;
         _currentTarget = _startPoint;
 
         _currentChoicesPlayer = _playerPrefabs[0];
+    }
+
+    private void GoToMainMenu()
+    {
+        ResetTarget();
+        EnableMenuPanel();
+        DisableBackButton();
+        DisableSwipeButtons();
+        DisabelChoiceButton();
     }
 
     public void LoadMainScene()
@@ -114,6 +119,7 @@ public class MainMenuButtons : MonoBehaviour
     public void ChoiceCurrentPlayer()
     {
         _currentChoicesPlayer = _playerPrefabs[_currentPlayer];
+        GoToMainMenu();
     }
 
     private void Update()
