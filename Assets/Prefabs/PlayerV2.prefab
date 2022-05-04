@@ -246,7 +246,7 @@ MonoBehaviour:
   _damage: 2000
   _range: 1
   _fireRate: 0.5
-  _unAttack: {fileID: 3600443663025008994}
+  _unAttack: {fileID: 285275845557489058, guid: 45220dbbaa88e924a94e2061975baf8f, type: 3}
   _bullet: {fileID: 7867368049732382922, guid: 3b8db706dd36b6a4780e9f332ecd392e, type: 3}
   _bulletCount: 3
   _shootField: 40
