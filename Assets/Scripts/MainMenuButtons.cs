@@ -41,6 +41,11 @@ public class MainMenuButtons : MonoBehaviour
         DisabelChoiceButton();
     }
 
+    public void GoToExampleScene()
+    {
+        ExampleScene.Load();
+    }
+
     public void LoadMainScene()
     {
         SampleScene.Load(_currentChoicesPlayer);

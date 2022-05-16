@@ -21,6 +21,7 @@ public class FasterAttack : PlayerAttack
         {
             BulletBase bullet = CreateBullet();
             bullet.Push(attackDirection);
+            bullet.transform.rotation = Quaternion.Euler(attackDirection);
             yield return new WaitForSeconds(_bulletSpacing);
         }
         _canShooting = true;
